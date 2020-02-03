@@ -16,7 +16,7 @@ const Movie = styled.div`
   align-items: flex-start;
 `;
 const Img = styled.img`
-  width: 150px;
+  max-width: 150px;
   position: relative;
   top: -50px;
   margin-right: 30px;
