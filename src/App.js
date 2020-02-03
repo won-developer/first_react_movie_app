@@ -57,7 +57,7 @@ class App extends React.Component {
             {isLoading ? (
               <Loading__txt>
                 <span className="loader__text">
-                  Please wait API is loaded..sexsex
+                  Please wait API is loaded..
                 </span>
               </Loading__txt>
             ) : (
