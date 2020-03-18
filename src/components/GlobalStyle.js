@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+    a {
+        all: unset;
+        cursor: pointer;
+    }
     body {
         background-color: #EFF3F7;
         font-family: 'Merriweather', serif;

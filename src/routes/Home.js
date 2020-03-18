@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import Movie from "../components/Movie";
 import styled from "styled-components";
-import GlobalStyle from "../components/GlobalStyle";
 
 // STYLED-COMPONENT
 const Container = styled.div`
@@ -77,7 +76,6 @@ class Home extends React.Component {
             )}
           </Section>
         </Container>
-        <GlobalStyle />
       </>
     );
   }
