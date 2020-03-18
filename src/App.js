@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import Movies from "./Movies";
-import styled, { css, createGlobalStyle } from "styled-components";
+import Movie from "./Movie";
+import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 
 // STYLED-COMPONENT
@@ -15,17 +15,17 @@ const Section = styled.section`
   align-items: center;
   height: 100%;
 `;
-const Loading__txt = styled.div`
+const Loading = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
 `;
-const Movie__List = styled.div`
-padding: 70px 50px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
+const Movies = styled.div`
+  padding: 70px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 // COMPONENT
@@ -55,16 +55,16 @@ class App extends React.Component {
         <Container>
           <Section>
             {isLoading ? (
-              <Loading__txt>
+              <Loading>
                 <span className="loader__text">
                   Please wait API is loaded..
                 </span>
-              </Loading__txt>
+              </Loading>
             ) : (
-              <Movie__List>
+              <Movies>
                 {movies.map(movie => {
                   return (
-                    <Movies
+                    <Movie
                       key={movie.id}
                       id={movie.id}
                       year={movie.year}
@@ -75,7 +75,7 @@ class App extends React.Component {
                     />
                   );
                 })}
-              </Movie__List>
+              </Movies>
             )}
           </Section>
         </Container>
