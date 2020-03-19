@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link as a } from "react-router-dom";
 
 // STYLED-COMPONENT
+
+const Link = styled(a)`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
 const MovieBox = styled.div`
   background-color: #fff;
   border-radius: 30px;
@@ -62,21 +69,34 @@ const Genres = styled.li`
 const Movie = ({ year, title, summary, poster, genres }) => {
   return (
     <MovieBox>
-      <Img src={poster} alt={title} />
-      <div className="movie__data">
-        <Title className="movie__title">{title}</Title>
-        <Year className="movie__year">{year}</Year>
-        <GenresList>
-          {genres.map((genres, index) => {
-            return (
-              <Genres className="movie__genres" key={index}>
-                {genres}
-              </Genres>
-            );
-          })}
-        </GenresList>
-        <Summary className="movie__summary">{summary}</Summary>
-      </div>
+      <Link
+        to={{
+          pathname: "/movie-detail",
+          state: {
+            year,
+            title,
+            summary,
+            poster,
+            genres
+          }
+        }}
+      >
+        <Img src={poster} alt={title} />
+        <div className="movie__data">
+          <Title className="movie__title">{title}</Title>
+          <Year className="movie__year">{year}</Year>
+          <GenresList>
+            {genres.map((genres, index) => {
+              return (
+                <Genres className="movie__genres" key={index}>
+                  {genres}
+                </Genres>
+              );
+            })}
+          </GenresList>
+          <Summary className="movie__summary">{summary}</Summary>
+        </div>
+      </Link>
     </MovieBox>
   );
 };
